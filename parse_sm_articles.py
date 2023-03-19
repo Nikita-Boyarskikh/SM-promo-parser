@@ -238,8 +238,7 @@ async def parse_then_send(url: str, token: str, post: str, connections_limit: in
         eval_resp_cb=iwaf_challenge,
         retries=retries,
     ) as client:
-        # articles = await parse(client, url, connections_limit, retries)
-        articles = ['TEST']
+        articles = await parse(client, url, connections_limit, retries)
 
     async with make_client(
         base_url=VK_API_BASE_URL,
